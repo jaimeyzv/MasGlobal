@@ -13,7 +13,7 @@ namespace MasGlobal.DataAccess
     {
         static HttpClient client = new HttpClient();
 
-        public async Task<IEnumerable<Employee>> GetAllAsync()
+        public async Task<IEnumerable<EmployeeDto>> GetAllAsync()
         {
             //declare api client 
             
@@ -29,7 +29,7 @@ namespace MasGlobal.DataAccess
             if (resp.IsSuccessStatusCode)
             {
                 var resultado = resp.Content.ReadAsStringAsync().Result;
-                var result = JsonConvert.DeserializeObject<IEnumerable<Employee>>(resultado);
+                var result = JsonConvert.DeserializeObject<IEnumerable<EmployeeDto>>(resultado);
 
                 return result;
             }

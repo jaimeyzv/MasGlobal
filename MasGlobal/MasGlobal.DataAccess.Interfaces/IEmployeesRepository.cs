@@ -6,6 +6,6 @@ namespace MasGlobal.DataAccess.Interfaces
 {
     public interface IEmployeesRepository
     {
-        Task<IEnumerable<Employee>> GetAllAsync();
+        Task<IEnumerable<EmployeeDto>> GetAllAsync();
     }
 }

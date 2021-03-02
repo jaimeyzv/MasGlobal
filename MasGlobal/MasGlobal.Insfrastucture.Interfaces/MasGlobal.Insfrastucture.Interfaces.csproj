@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A186FBAB-5C81-40E5-8099-6BFCC02344B1}</ProjectGuid>
+    <ProjectGuid>{BA458B34-A6A8-403A-B5FF-80CE4DBEE763}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MasGlobal.DataAccess.Interfaces.Dtos</RootNamespace>
-    <AssemblyName>MasGlobal.DataAccess.Interfaces.Dtos</AssemblyName>
+    <RootNamespace>MasGlobal.Insfrastucture.Interfaces</RootNamespace>
+    <AssemblyName>MasGlobal.Insfrastucture.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,8 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmployeeDto.cs" />
+    <Compile Include="IMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MasGlobal.Business.Entities\MasGlobal.Business.Entities.csproj">
+      <Project>{A0A81653-82D5-4EA4-AA45-192BCD9CA0DC}</Project>
+      <Name>MasGlobal.Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MasGlobal.DataAccess.Interfaces.Dtos\MasGlobal.DataAccess.Interfaces.Dtos.csproj">
+      <Project>{A186FBAB-5C81-40E5-8099-6BFCC02344B1}</Project>
+      <Name>MasGlobal.DataAccess.Interfaces.Dtos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

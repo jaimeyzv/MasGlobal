@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A186FBAB-5C81-40E5-8099-6BFCC02344B1}</ProjectGuid>
+    <ProjectGuid>{2AEA0AF2-0FF1-497F-9F8C-CE3CFE3C0F01}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MasGlobal.DataAccess.Interfaces.Dtos</RootNamespace>
-    <AssemblyName>MasGlobal.DataAccess.Interfaces.Dtos</AssemblyName>
+    <RootNamespace>MasGlobal.Business</RootNamespace>
+    <AssemblyName>MasGlobal.Business</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,8 +41,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmployeeDto.cs" />
+    <Compile Include="EmployeeBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MasGlobal.Business.Entities\MasGlobal.Business.Entities.csproj">
+      <Project>{A0A81653-82D5-4EA4-AA45-192BCD9CA0DC}</Project>
+      <Name>MasGlobal.Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MasGlobal.Business.Interfaces\MasGlobal.Business.Interfaces.csproj">
+      <Project>{1DE83EF5-5D59-486A-94C1-AA605CC57A20}</Project>
+      <Name>MasGlobal.Business.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MasGlobal.DataAccess.Interfaces.Dtos\MasGlobal.DataAccess.Interfaces.Dtos.csproj">
+      <Project>{A186FBAB-5C81-40E5-8099-6BFCC02344B1}</Project>
+      <Name>MasGlobal.DataAccess.Interfaces.Dtos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MasGlobal.DataAccess.Interfaces\MasGlobal.DataAccess.Interfaces.csproj">
+      <Project>{7CCD0940-199F-420C-82A1-150A1E26BDE5}</Project>
+      <Name>MasGlobal.DataAccess.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MasGlobal.Insfrastucture.Interfaces\MasGlobal.Insfrastucture.Interfaces.csproj">
+      <Project>{BA458B34-A6A8-403A-B5FF-80CE4DBEE763}</Project>
+      <Name>MasGlobal.Insfrastucture.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
