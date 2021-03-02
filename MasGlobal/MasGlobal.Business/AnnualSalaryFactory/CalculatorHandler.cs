@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using MasGlobal.Business.Entities;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MasGlobal.Business.Entities.AnnualSalaryFactory
+namespace MasGlobal.Business.AnnualSalaryFactory
 {
     public class CalculatorHandler
     {

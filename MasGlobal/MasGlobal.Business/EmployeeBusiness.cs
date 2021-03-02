@@ -1,6 +1,6 @@
-﻿using MasGlobal.Business.Entities;
-using MasGlobal.Business.Entities.AnnualSalaryFactory;
-using MasGlobal.Business.Entities.AnnualSalaryStrategy;
+﻿using MasGlobal.Business.AnnualSalaryFactory;
+using MasGlobal.Business.AnnualSalaryStrategy;
+using MasGlobal.Business.Entities;
 using MasGlobal.Business.Interfaces;
 using MasGlobal.DataAccess.Interfaces;
 using MasGlobal.Insfrastucture.Interfaces;
@@ -28,8 +28,8 @@ namespace MasGlobal.Business
             if (employeeDtos == null || !employeeDtos.Any()) return new List<EmployeeEntity>();
             var employeeEntities = (from r in employeeDtos.ToList() select this.mapper.MapFromDtoToEntity(r)).ToList();
 
-            await ProcessAnnualSalaryStrategy(employeeEntities);
-            //await ProcessAnnualSalaryFactory(employeeEntities);
+            //await ProcessAnnualSalaryStrategy(employeeEntities);
+            await ProcessAnnualSalaryFactory(employeeEntities);
 
             return employeeEntities;
         }
@@ -40,8 +40,8 @@ namespace MasGlobal.Business
 
             foreach (var item in entities)
             {
-                var type = (Entities.AnnualSalaryStrategy.CalculationTypes)System.Enum
-                    .Parse(typeof(Entities.AnnualSalaryStrategy.CalculationTypes), item.ContractTypeName);                
+                var type = (AnnualSalaryStrategy.CalculationTypes)System.Enum
+                    .Parse(typeof(AnnualSalaryStrategy.CalculationTypes), item.ContractTypeName);                
                 item.CalculatedAnnualSalary = await calculatorContext.calculators[type].CalculateAnnualSalaryAsync(item);
             }
         }
@@ -52,8 +52,8 @@ namespace MasGlobal.Business
 
             foreach (var item in entities)
             {
-                var type = (Entities.AnnualSalaryFactory.CalculationTypes)System.Enum
-                    .Parse(typeof(Entities.AnnualSalaryFactory.CalculationTypes), item.ContractTypeName);
+                var type = (AnnualSalaryFactory.CalculationTypes)System.Enum
+                    .Parse(typeof(AnnualSalaryFactory.CalculationTypes), item.ContractTypeName);
                 var factory = await calculatorHandler.ExecuteCreationAsync(type, item);
                 item.CalculatedAnnualSalary = await factory.CalculateAnnualSalaryAsync();
             }

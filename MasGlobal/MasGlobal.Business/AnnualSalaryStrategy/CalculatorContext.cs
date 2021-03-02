@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MasGlobal.Business.Entities.AnnualSalaryStrategy
+namespace MasGlobal.Business.AnnualSalaryStrategy
 {
     public class CalculatorContext
     {

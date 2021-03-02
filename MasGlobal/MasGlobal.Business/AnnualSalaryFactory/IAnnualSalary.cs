@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace MasGlobal.Business.Entities.AnnualSalaryFactory
+namespace MasGlobal.Business.AnnualSalaryFactory
 {
     public interface IAnnualSalary
     {

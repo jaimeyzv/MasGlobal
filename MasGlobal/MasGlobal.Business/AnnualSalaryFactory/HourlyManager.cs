@@ -1,6 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using MasGlobal.Business.Entities;
+using System.Threading.Tasks;
 
-namespace MasGlobal.Business.Entities.AnnualSalaryFactory
+namespace MasGlobal.Business.AnnualSalaryFactory
 {
     public class HourlyManager : IAnnualSalary
     {

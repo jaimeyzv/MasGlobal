@@ -41,19 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnnualSalaryFactory\CalculationTypes.cs" />
-    <Compile Include="AnnualSalaryFactory\CalculatorHandler.cs" />
-    <Compile Include="AnnualSalaryFactory\HourlyFactory.cs" />
-    <Compile Include="AnnualSalaryFactory\HourlyManager.cs" />
-    <Compile Include="AnnualSalaryFactory\IAnnualSalary.cs" />
-    <Compile Include="AnnualSalaryFactory\IAnnualSalaryFactory.cs" />
-    <Compile Include="AnnualSalaryFactory\MonthlyFactory.cs" />
-    <Compile Include="AnnualSalaryFactory\MonthlyManager.cs" />
-    <Compile Include="AnnualSalaryStrategy\CalculationTypes.cs" />
-    <Compile Include="AnnualSalaryStrategy\CalculatorContext.cs" />
-    <Compile Include="AnnualSalaryStrategy\HourlyBased.cs" />
-    <Compile Include="AnnualSalaryStrategy\IAnnualSalary.cs" />
-    <Compile Include="AnnualSalaryStrategy\MonthlyBased.cs" />
     <Compile Include="EmployeeEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
