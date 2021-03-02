@@ -26,10 +26,10 @@ namespace MasGlobal.Business
         {
             var employeeDtos = await this.employeesRepository.GetAllAsync();
             if (employeeDtos == null || !employeeDtos.Any()) return new List<EmployeeEntity>();
-            var employeeEntities = (from r in employeeDtos.ToList() select this.mapper.MapFromDtotoEntity(r)).ToList();
+            var employeeEntities = (from r in employeeDtos.ToList() select this.mapper.MapFromDtoToEntity(r)).ToList();
 
-            // await ProcessAnnualSalaryStrategy(employeeEntities);
-            await ProcessAnnualSalaryFactory(employeeEntities);
+            await ProcessAnnualSalaryStrategy(employeeEntities);
+            //await ProcessAnnualSalaryFactory(employeeEntities);
 
             return employeeEntities;
         }

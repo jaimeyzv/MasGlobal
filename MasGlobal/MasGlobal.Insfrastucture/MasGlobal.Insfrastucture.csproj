@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MasGlobal.Api.ViewModels\MasGlobal.Api.ViewModels.csproj">
+      <Project>{012F6EBA-19B1-4D1F-91F5-6B77A9F5B8CF}</Project>
+      <Name>MasGlobal.Api.ViewModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MasGlobal.Business.Entities\MasGlobal.Business.Entities.csproj">
       <Project>{A0A81653-82D5-4EA4-AA45-192BCD9CA0DC}</Project>
       <Name>MasGlobal.Business.Entities</Name>

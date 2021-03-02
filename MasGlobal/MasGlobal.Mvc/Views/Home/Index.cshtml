@@ -1,0 +1,72 @@
+﻿*@model MasGlobal.Mvc.Models.FilterViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>MasGlobal Challenge</h1>
+</div>
+
+<div class="row">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+    <div class="col-md-8">
+        <label>Employee ID: </label>
+        @Html.TextBoxFor(m => m.EmployeeId, new { @class = "form-control" })
+    </div>
+        <div class="col-md-4">
+            <input type="submit" value="Get Employees" />
+        </div>
+    }
+
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Contract Type</th>
+                <th>Role</th>
+                <th>Role Description</th>
+                <th>Hourly Salary</th>
+                <th>Monthly Salary</th>
+                <th>Calculated Annual Salary</th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Employees)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContractTypeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoleName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoleDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HourlySalary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MonthlySalary)
+                    </td>
+                    <td>
+                        @string.Format("{0:C}", item.CalculatedAnnualSalary);
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
