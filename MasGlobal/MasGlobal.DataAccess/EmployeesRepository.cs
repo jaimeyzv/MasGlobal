@@ -3,14 +3,12 @@ using MasGlobal.DataAccess.Interfaces;
 using MasGlobal.DataAccess.Interfaces.Dtos;
 using MasGlobal.Insfrastucture.Interfaces;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace MasGlobal.DataAccess
 {
     public class EmployeesRepository : IEmployeesRepository
     {
-        static HttpClient client = new HttpClient();
         private readonly IConfigurationManagerWrapper configurationManagerWrapper;
 
         public EmployeesRepository(IConfigurationManagerWrapper configurationManagerWrapper)
