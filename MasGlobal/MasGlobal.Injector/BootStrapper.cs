@@ -23,6 +23,7 @@ namespace MasGlobal.Injector
         private void RegisterInsfrastructure(UnityContainer container)
         {
             container.RegisterType<IMapper, Mapper>();
+            container.RegisterType<IConfigurationManagerWrapper, ConfigurationManagerWrapper>();
         }
 
         private void RegisterRepositories(UnityContainer container)

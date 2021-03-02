@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.Api.ViewModels", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.Mvc", "MasGlobal.Mvc\MasGlobal.Mvc.csproj", "{06C4289D-0D1C-489A-84EB-6FD3571FD89C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{1E1E12B6-5A2B-46D8-B1F1-151C244AAFB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.Common", "MasGlobal.Common\MasGlobal.Common.csproj", "{A4A63C5D-F4EF-45CE-A3F5-DD849ABFDD17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +93,10 @@ Global
 		{06C4289D-0D1C-489A-84EB-6FD3571FD89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06C4289D-0D1C-489A-84EB-6FD3571FD89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06C4289D-0D1C-489A-84EB-6FD3571FD89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4A63C5D-F4EF-45CE-A3F5-DD849ABFDD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4A63C5D-F4EF-45CE-A3F5-DD849ABFDD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4A63C5D-F4EF-45CE-A3F5-DD849ABFDD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4A63C5D-F4EF-45CE-A3F5-DD849ABFDD17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,6 +114,7 @@ Global
 		{A97800D7-C98E-4530-AA5E-A7CFE9EC165B} = {3DD8DEBF-B0FA-4655-97E3-2F9E65C58DA7}
 		{012F6EBA-19B1-4D1F-91F5-6B77A9F5B8CF} = {3DD8DEBF-B0FA-4655-97E3-2F9E65C58DA7}
 		{06C4289D-0D1C-489A-84EB-6FD3571FD89C} = {3DD8DEBF-B0FA-4655-97E3-2F9E65C58DA7}
+		{A4A63C5D-F4EF-45CE-A3F5-DD849ABFDD17} = {1E1E12B6-5A2B-46D8-B1F1-151C244AAFB9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3BA35A33-9CC5-48FE-BA5D-9E52AE278F7B}

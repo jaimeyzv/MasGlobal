@@ -1,10 +1,9 @@
-﻿using MasGlobal.DataAccess.Interfaces;
+﻿using MasGlobal.Common.Wrappers;
+using MasGlobal.DataAccess.Interfaces;
 using MasGlobal.DataAccess.Interfaces.Dtos;
-using Newtonsoft.Json;
-using System;
+using MasGlobal.Insfrastucture.Interfaces;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace MasGlobal.DataAccess
@@ -12,57 +11,20 @@ namespace MasGlobal.DataAccess
     public class EmployeesRepository : IEmployeesRepository
     {
         static HttpClient client = new HttpClient();
+        private readonly IConfigurationManagerWrapper configurationManagerWrapper;
+
+        public EmployeesRepository(IConfigurationManagerWrapper configurationManagerWrapper)
+        {
+            this.configurationManagerWrapper = configurationManagerWrapper;
+        }
 
         public async Task<IEnumerable<EmployeeDto>> GetAllAsync()
         {
-            //declare api client 
-            
-            //Initialize api client
-            if (client.BaseAddress == null)
-                client.BaseAddress = new Uri("http://masglobaltestapi.azurewebsites.net/");
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            
-            //Call client.PostAsJsonAsync to send a POST request to the appropriate URI   
-            HttpResponseMessage resp = await client.GetAsync("api/Employees");
-            //This method throws an exception if the HTTP response status is an error code.  
-            //var xx = resp.EnsureSuccessStatusCode();
-            if (resp.IsSuccessStatusCode)
-            {
-                var resultado = resp.Content.ReadAsStringAsync().Result;
-                var result = JsonConvert.DeserializeObject<IEnumerable<EmployeeDto>>(resultado);
+            var client = new HttpClientWrapper<IList<EmployeeDto>>();
+            var url = configurationManagerWrapper.GetAppSettings("MasGlobalUrl");
+            var result = await client.GetAsync(url + "api/Employees");
 
-                return result;
-            }
-            else
-                return null;
-            
-
-            //var url = $"http://localhost:8080/items?filter={filter}";
-            //var request = (HttpWebRequest)WebRequest.Create(url);
-            //request.Method = "GET";
-            //request.ContentType = "application/json";
-            //request.Accept = "application/json";
-
-            //try
-            //{
-            //    using (WebResponse response = request.GetResponse())
-            //    {
-            //        using (Stream strReader = response.GetResponseStream())
-            //        {
-            //            if (strReader == null) return null;
-            //            using (StreamReader objReader = new StreamReader(strReader))
-            //            {
-            //                string responseBody = objReader.ReadToEnd();
-            //                // Do something with responseBody
-            //                Console.WriteLine(responseBody);
-            //            }
-            //        }
-            //    }
-            //}
-            //catch (WebException ex)
-            //{
-            //    // Handle error
-            //}
+            return result;            
         }
     }
 }

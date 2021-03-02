@@ -184,6 +184,10 @@
       <Project>{012F6EBA-19B1-4D1F-91F5-6B77A9F5B8CF}</Project>
       <Name>MasGlobal.Api.ViewModels</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MasGlobal.Common\MasGlobal.Common.csproj">
+      <Project>{A4A63C5D-F4EF-45CE-A3F5-DD849ABFDD17}</Project>
+      <Name>MasGlobal.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

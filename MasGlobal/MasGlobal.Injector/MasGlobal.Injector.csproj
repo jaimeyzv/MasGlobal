@@ -83,6 +83,10 @@
       <Project>{2AEA0AF2-0FF1-497F-9F8C-CE3CFE3C0F01}</Project>
       <Name>MasGlobal.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MasGlobal.Common\MasGlobal.Common.csproj">
+      <Project>{A4A63C5D-F4EF-45CE-A3F5-DD849ABFDD17}</Project>
+      <Name>MasGlobal.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MasGlobal.DataAccess.Interfaces\MasGlobal.DataAccess.Interfaces.csproj">
       <Project>{7CCD0940-199F-420C-82A1-150A1E26BDE5}</Project>
       <Name>MasGlobal.DataAccess.Interfaces</Name>

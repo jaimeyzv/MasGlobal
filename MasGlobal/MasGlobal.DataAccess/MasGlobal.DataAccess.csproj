@@ -48,6 +48,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MasGlobal.Common\MasGlobal.Common.csproj">
+      <Project>{A4A63C5D-F4EF-45CE-A3F5-DD849ABFDD17}</Project>
+      <Name>MasGlobal.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MasGlobal.DataAccess.Interfaces.Dtos\MasGlobal.DataAccess.Interfaces.Dtos.csproj">
       <Project>{A186FBAB-5C81-40E5-8099-6BFCC02344B1}</Project>
       <Name>MasGlobal.DataAccess.Interfaces.Dtos</Name>
@@ -55,6 +59,10 @@
     <ProjectReference Include="..\MasGlobal.DataAccess.Interfaces\MasGlobal.DataAccess.Interfaces.csproj">
       <Project>{7CCD0940-199F-420C-82A1-150A1E26BDE5}</Project>
       <Name>MasGlobal.DataAccess.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MasGlobal.Insfrastucture.Interfaces\MasGlobal.Insfrastucture.Interfaces.csproj">
+      <Project>{BA458B34-A6A8-403A-B5FF-80CE4DBEE763}</Project>
+      <Name>MasGlobal.Insfrastucture.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
