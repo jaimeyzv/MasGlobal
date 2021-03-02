@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace MasGlobal.Business.Entities.AnnualSalary
+namespace MasGlobal.Business.Entities.AnnualSalaryStrategy
 {
     public class HourlyBased : IAnnualSalary
     {

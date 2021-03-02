@@ -2,8 +2,8 @@
 
 namespace MasGlobal.Business.Entities.AnnualSalaryFactory
 {
-    public interface IAnnualSalary
+    public interface IAnnualSalaryFactory
     {
-        Task<decimal> CalculateAnnualSalaryAsync();
+        Task<IAnnualSalary> CreateAsync(EmployeeEntity employee);
     }
 }

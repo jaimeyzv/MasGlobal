@@ -1,4 +1,4 @@
-﻿namespace MasGlobal.Business.Entities.AnnualSalary
+﻿namespace MasGlobal.Business.Entities.AnnualSalaryStrategy
 {
     public enum CalculationTypes
     {
