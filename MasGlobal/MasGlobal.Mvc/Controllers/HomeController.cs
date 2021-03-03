@@ -55,6 +55,11 @@ namespace MasGlobal.Mvc.Controllers
             var url = configurationManagerWrapper.GetAppSettings("LocalApiUrl") + "api/employees/" + vm.EmployeeId;
             var result = client.GetAsync(url).Result;
 
+            if (result == null)
+            {
+                ViewBag.Message = $"No data with Id: {vm.EmployeeId}";
+                return vm;
+            }
             vm.Employees = new List<EmployeeViewModel>();
             vm.Employees.Add(result);
             

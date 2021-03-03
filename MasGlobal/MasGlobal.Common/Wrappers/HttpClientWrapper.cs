@@ -15,11 +15,14 @@ namespace MasGlobal.Common.Wrappers
             {
                 var response = httpClient.GetAsync(new Uri(url)).Result;
 
-                response.EnsureSuccessStatusCode();
-               
-                var respondeResult = response.Content.ReadAsStringAsync().Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    response.EnsureSuccessStatusCode();
 
-                result = JsonConvert.DeserializeObject<T>(respondeResult);
+                    var respondeResult = response.Content.ReadAsStringAsync().Result;
+
+                    result = JsonConvert.DeserializeObject<T>(respondeResult);
+                }
             }
 
             return result;
