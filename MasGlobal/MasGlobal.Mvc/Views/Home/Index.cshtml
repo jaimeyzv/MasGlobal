@@ -13,7 +13,7 @@
     {
     <div class="col-md-8">
         <label>Employee ID: </label>
-        @Html.TextBoxFor(m => m.EmployeeId, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.EmployeeId, new { @type = "number", @class = "form-control" })
     </div>
         <div class="col-md-4">
             <input type="submit" value="Get Employees" />
@@ -36,37 +36,40 @@
                 <th>Calculated Annual Salary</th>
                 <th></th>
             </tr>
-
-            @foreach (var item in Model.Employees)
+            @if (Model.Employees != null && Model.Employees.Any())
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ContractTypeName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.RoleName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.RoleDescription)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.HourlySalary)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MonthlySalary)
-                    </td>
-                    <td>
-                        @string.Format("{0:C}", item.CalculatedAnnualSalary);
-                    </td>
-                </tr>
+                foreach (var item in Model.Employees)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContractTypeName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RoleName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RoleDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HourlySalary)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MonthlySalary)
+                        </td>
+                        <td>
+                            @string.Format("{0:C}", item.CalculatedAnnualSalary);
+                        </td>
+                    </tr>
+                }
             }
 
         </table>
+        <p>@ViewBag.Message</p>
     </div>
 </div>
